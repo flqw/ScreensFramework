@@ -7,7 +7,7 @@ import javafx.stage.Stage;
  * Abstract superclass for FXML Controllers to be used with the Screens framework. Contains all life-cycle methods that may be
  * overridden.
  */
-public abstract class Controller {
+public abstract class ViewController {
 
 	/**
 	 * The primary stage of this screen.

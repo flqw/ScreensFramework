@@ -13,7 +13,7 @@ public class Screens extends StackPane {
 	private Stage stage;
 
 	private HashMap<String, Node> screens = new HashMap<>();
-	private HashMap<String, Controller> controllers = new HashMap<>();
+	private HashMap<String, ViewController> controllers = new HashMap<>();
 
 	private String activeScreen;
 
@@ -48,7 +48,7 @@ public class Screens extends StackPane {
 
 			Node screenRoot = loader.load();
 
-			Controller controller = loader.getController();
+			ViewController controller = loader.getController();
 
 			// Inject values.
 			controller.setScenes(this);
@@ -68,7 +68,7 @@ public class Screens extends StackPane {
 	}
 
 	/**
-	 * For javadoc see {@link Controller#switchTo}.
+	 * For javadoc see {@link ViewController#switchTo}.
 	 *
 	 * @param screenId
 	 */
@@ -116,8 +116,8 @@ public class Screens extends StackPane {
 
 		ScreenTransitionState state = ScreenTransitionState.OLD_WILL_DISAPPEAR;
 
-		Controller oldController;
-		Controller newController;
+		ViewController oldController;
+		ViewController newController;
 
 		Node newScreenRoot;
 		Node oldScreenRoot;

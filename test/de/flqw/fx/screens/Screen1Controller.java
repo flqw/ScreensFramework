@@ -1,6 +1,6 @@
 package de.flqw.fx.screens;
 
-import de.flqw.fx.screens.Controller;
+import de.flqw.fx.screens.ViewController;
 import de.flqw.fx.screens.Screens.ScreenTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -10,7 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
-public class Screen1Controller extends Controller {
+public class Screen1Controller extends ViewController {
 
 	private @FXML Button transitionButton;
 	private @FXML Button exitButton;

@@ -1,13 +1,13 @@
 package de.flqw.fx.screens;
 
-import de.flqw.fx.screens.Controller;
+import de.flqw.fx.screens.ViewController;
 import de.flqw.fx.screens.Screens.ScreenTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
-public class Screen2Controller extends Controller {
+public class Screen2Controller extends ViewController {
 
 	private @FXML Button backButton;
 
