@@ -1,5 +1,7 @@
 package de.flqw.fx.screens;
 
+import java.util.HashMap;
+
 import de.flqw.fx.screens.Screens.ScreenTransition;
 import javafx.stage.Stage;
 
@@ -14,7 +16,13 @@ public abstract class ViewController {
 	 */
 	protected Stage stage;
 
+	/**
+	 * The custom data passed to {@link Screens}.
+	 */
+	protected HashMap<String, Object> data;
+
 	private Screens screens;
+
 
 	/**
 	 * Will be called when the initialization is done. You can access the @FXML injected values here for the first time.
@@ -114,5 +122,14 @@ public abstract class ViewController {
 	 */
 	void setScenes(Screens screens) {
 		this.screens = screens;
+	}
+
+	/**
+	 * Injector for {@link Screens}.
+	 *
+	 * @param data
+	 */
+	void setData(HashMap<String, Object> data) {
+		this.data = data;
 	}
 }

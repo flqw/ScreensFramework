@@ -14,10 +14,12 @@ public class Screens extends StackPane {
 
 	private HashMap<String, Node> screens = new HashMap<>();
 	private HashMap<String, ViewController> controllers = new HashMap<>();
+	private HashMap<String, Object> data = new HashMap<>();
 
 	private String activeScreen;
 
 	private ScreenTransitionHandler handler;
+
 
 	private ScreenTransition transition = new ScreenTransition();
 
@@ -28,6 +30,17 @@ public class Screens extends StackPane {
 	 * @param stage The primary stage.
 	 */
 	public Screens(HashMap<String, String> screens, Stage stage) {
+		this(screens, stage, new HashMap<>());
+	}
+
+	/**
+	 * Constructor.
+	 *
+	 * @param screens Map of <id:fxmlPath> screens.
+	 * @param stage The primary stage.
+	 */
+	public Screens(HashMap<String, String> screens, Stage stage, HashMap<String, Object> data) {
+		this.data = data;
 		this.stage = stage;
 		// Black background looks better.
 		setStyle("-fx-background-color:black");
@@ -53,6 +66,9 @@ public class Screens extends StackPane {
 			// Inject values.
 			controller.setScenes(this);
 			controller.setStage(stage);
+
+			// Pass the custom data.
+			controller.setData(data);
 
 			// Call the controller initialization.
 			controller.init();

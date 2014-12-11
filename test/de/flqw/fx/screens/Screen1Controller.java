@@ -26,6 +26,11 @@ public class Screen1Controller extends ViewController {
 	}
 
 	@Override
+	protected void init() {
+		System.out.println("Custom data: " + data.get("test"));
+	}
+
+	@Override
 	protected void disappear(ScreenTransition transition) {
 
 		double outside = stage.getHeight();

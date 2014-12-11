@@ -26,7 +26,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 
-		Screens screens = new Screens(SCREENS, stage);
+		HashMap<String, Object> data = new HashMap<>();
+		data.put("test", "HALLO");
+
+		Screens screens = new Screens(SCREENS, stage, data);
 
 		stage.setMinHeight(HEIGHT);
 		stage.setMinWidth(WIDTH);
